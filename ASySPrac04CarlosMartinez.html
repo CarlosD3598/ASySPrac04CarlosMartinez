@@ -1,0 +1,238 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>ASySPrac04CarlosMartinez</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-11-16"><meta name="DC.source" content="ASySPrac04CarlosMartinez.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1></h1><!--introduction--><p><img vspace="5" hspace="5" src="portada.png" alt=""> </p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Objetivos</a></li><li><a href="#2">Introducci&oacute;n</a></li><li><a href="#3">Desarrollo</a></li><li><a href="#4">Ejercicio 1</a></li><li><a href="#6">Ejercicio 2</a></li><li><a href="#8">Ejercicio 3</a></li><li><a href="#9">Ejercicio 4</a></li><li><a href="#10">Ejercicio 5</a></li><li><a href="#11">Apendice A</a></li><li><a href="#12">Referencias</a></li></ul></div><h2 id="1">Objetivos</h2><div><ul><li>Conocer m&eacute;todos b&aacute;sicos de integrac&iacute;on num&eacute;rica</li><li>Manipulaci&oacute;n de instrucciones en MATLAB</li><li>Simular convoluciones y correlaciones de se&ntilde;ales continuas</li><li>Simular convoluciones y correlaciones de se&ntilde;ales discretas</li></ul></div><h2 id="2">Introducci&oacute;n</h2><h2 id="3">Desarrollo</h2><p>Se plantea la soluci&oacute;n a cinco problemas, donde cada uno requiere del uso de Matlab como herramienta de c&aacute;lculo y an&aacute;lisis.</p><h2 id="4">Ejercicio 1</h2><p>Para el PR04 reporte la grafica de la simulaci&oacute;n n&uacute;merica de la convoluci&oacute;n y compare con el resultado an&aacute;litico que obtuvo para el problema 1, esto es, su pr&aacute;ctica tendr&aacute; que incluir una llamada a la funci&oacute;nn convconm y posteriormente se tendr&aacute; que mostrar (mediante el Publish) la gr&aacute;fica tanto de las se&ntilde;ales involucradas como el resultado de la convoluci&oacute;n, y en esta &uacute;ltima gr&aacute;ficara su resultado analitico, se tendr&aacute; que incluir el resultado analitico.</p><pre class="codeinput">clc; clear; close <span class="string">all</span>;
+u = @(t) heaviside(t);
+x = @(t) exp(-t).*(u(t)-u(t-1)); <span class="comment">%En programa se implementa --&gt; input('Ingresa la funci&oacute;n x(t):  ');</span>
+xl = [0 1];<span class="comment">%En programa se implementa --&gt; input('Ingresa los limites de la funci&oacute;n x(t):  ');</span>
+
+h= @(t) t.*(u(t+1)-u(t-1)); <span class="comment">%En programa se implementa --&gt; input('Ingresa la funci&oacute;n h(t):  ');</span>
+hl=[-1 1]; <span class="comment">%En programa se implementa --&gt; input('Ingresa los limites de la funci&oacute;n h(t):  ');</span>
+convconm(x,xl,h,hl,u)
+t1=-1:0.01:0; t2=0:0.01:1; t3=1:0.01:2; t4=-4:0.01:-1; t5=2:0.01:4;
+subplot(1,2,2); hold <span class="string">on</span>
+plot(t1,t1-1+2*exp(-t1-1)); plot(t2,t2-1-(t2-2)/exp(1)); plot(t3,-(t3-2)/exp(1)); plot(t4,0); plot(t5,0);
+legend(<span class="string">'y(t) numerico'</span>,<span class="string">'t'</span>,<span class="string">'t-1+2*e^(-t-1)'</span>,<span class="string">'t-1-(t-2)/e'</span>,<span class="string">'-(t-2)/e'</span>)
+</pre><img vspace="5" hspace="5" src="ASySPrac04CarlosMartinez_01.png" alt=""> <p><img vspace="5" hspace="5" src="E1.jpg" alt=""> </p><h2 id="6">Ejercicio 2</h2><p>Para el PR05 reporte la grafica de la simulaci&oacute;n n&uacute;merica de la correalci&oacute;n y compare con el resultado an&aacute;litico que obtuvo para el problema e), esto es, su pr&aacute;ctica tendr&aacute; que incluir una llamada a la funci&oacute;nn convconm y posteriormente se tendr&aacute; que mostrar (mediante el Publish) la gr&aacute;fica tanto de las se&ntilde;ales involucradas como el resultado de su correlaci&oacute;n, y en esta &uacute;ltima graficara su resultado analitico, se tendr&aacute; que incluir el resultado analitico.</p><pre class="codeinput">clc; clear; close <span class="string">all</span>;
+u = @(t) heaviside(t);
+h = @(t) u(t)-2*u(t-3)+u(t-4); <span class="comment">%En programa se implementa --&gt; input('Ingresa la funci&oacute;n x(t):  ');</span>
+xl = [0 4];<span class="comment">%En programa se implementa --&gt; input('Ingresa los limites de la funci&oacute;n x(t):  ');</span>
+x = @(t) -u(t)+2*u(t+3)-u(t+4);
+convconm1(x,xl,h,u)
+t1=-6:0.01:-4; t2=-4:0.01:-3; t3=-3:0.01:-1; t4=-1:0.01:0; t5=0:0.01:1; t6=1:0.01:3; t7=3:0.01:4; t8=4:0.01:6;
+subplot(1,2,2); hold <span class="string">on</span>
+plot(t1,0); plot(t2,-(4+t2)); plot(t3,t3+2); plot(t4,3*t4+4); plot(t5,4-3*t5); plot(t6,2-t6); plot(t7,t7-4); plot(t8,0);
+legend(<span class="string">'y(t) numerico'</span>,<span class="string">'t'</span>,<span class="string">'0'</span>,<span class="string">'-(4+t)'</span>,<span class="string">'t+2'</span>,<span class="string">'3t+4'</span>,<span class="string">'4-3t'</span>,<span class="string">'2-t'</span>,<span class="string">'t-4'</span>,<span class="string">'0'</span>)
+</pre><img vspace="5" hspace="5" src="ASySPrac04CarlosMartinez_02.png" alt=""> <p><img vspace="5" hspace="5" src="E2.jpg" alt=""> </p><h2 id="8">Ejercicio 3</h2><p>Realice la simuaci&oacute;n de la convoluci&oacute;n de las se&ntilde;ales (c) con (d) del problema 3.1.1</p><pre class="codeinput">n=0:20;
+x1=[0 0 0 0 0 0 0 -9 -6 -3 0 3 6 9 0 0 0 0 0 0 0];
+x2=[0 0 0 0 0 0 0 0 4 2 0 2 4 0 0 0 0 0 0 0 0];
+convdisc([n;x1],[n;x2])
+</pre><img vspace="5" hspace="5" src="ASySPrac04CarlosMartinez_03.png" alt=""> <h2 id="9">Ejercicio 4</h2><p>Realice la simuaci&oacute;n de la correlaci&oacute;n de las se&ntilde;ales (c) con (d) del problema 3.1.1</p><pre class="codeinput">n=0:20;
+x2=[0 0 0 0 0 0 0 9 6 3 0 -3 -6 -9 0 0 0 0 0 0 0];
+x1=[0 0 0 0 0 0 0 0 4 2 0 2 4 0 0 0 0 0 0 0 0];
+cordisc([n;x1],[n;-x2])
+</pre><img vspace="5" hspace="5" src="ASySPrac04CarlosMartinez_04.png" alt=""> <h2 id="10">Ejercicio 5</h2><p>Realice la la convoluci&oacute;n de las se&ntilde;ales (c) con (d) del problema 3.1.1 utilizando el comando conv de MATLAB, muestre el c&oacute;digo utilizado y gr&aacute;fique el resultado, sugerencia: Utilice las propiedades de traslaci&oacute;n de la convoluci&oacute;n.</p><pre class="codeinput">clc; clear <span class="string">all</span>; close <span class="string">all</span>
+
+subplot(3, 1, 1)
+n1 = [-6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6];
+x1 = [0 0 0 -9 -6 -3 0 3 6 9 0 0 0];
+stem(n1, x1, <span class="string">'filled'</span>, <span class="string">'red'</span>); axis([-8 8 -10 10]);
+set(gca,<span class="string">'Color'</span>,[0.945098042488098 0.968627452850342 0.949019610881805], <span class="string">'XGrid'</span>,<span class="string">'on'</span>,<span class="string">'YGrid'</span>,<span class="string">'on'</span>)
+title(<span class="string">'c): x1[n]'</span>);
+xlabel(<span class="string">'n'</span>)
+ylabel(<span class="string">'x1[n]'</span>)
+
+subplot(3, 1, 2)
+n2 = [-5 -4 -3 -2 -1 0 1 2 3 4 5];
+x2 = [0 0 0 4 2 0 2 4 0 0 0];
+stem(n2, x2, <span class="string">'filled'</span>, <span class="string">'green'</span>); axis([-8 8 -2 7]);
+set(gca,<span class="string">'Color'</span>,[0.945098042488098 0.968627452850342 0.949019610881805],<span class="string">'XGrid'</span>,<span class="string">'on'</span>,<span class="string">'YGrid'</span>,<span class="string">'on'</span>)
+title(<span class="string">'d): x2[n]'</span>);
+xlabel(<span class="string">'n'</span>)
+ylabel(<span class="string">'x2[n]'</span>)
+
+subplot(3, 1, 3)
+g = conv (x1, x2);
+ng = -11:11;
+stem(ng, g, <span class="string">'filled'</span>, <span class="string">'magenta'</span>); axis([-15 15 -50 50]);
+set(gca,<span class="string">'Color'</span>,[0.945098042488098 0.968627452850342 0.949019610881805],<span class="string">'XGrid'</span>,<span class="string">'on'</span>,<span class="string">'YGrid'</span>,<span class="string">'on'</span>)
+title(<span class="string">'Convoluci&oacute;n g[n] = x1[n]*x2[n]'</span>);
+xlabel(<span class="string">'n'</span>)
+ylabel(<span class="string">'g[n]'</span>)
+</pre><img vspace="5" hspace="5" src="ASySPrac04CarlosMartinez_05.png" alt=""> <h2 id="11">Apendice A</h2><p>Puede consultar los codigos de programaci&oacute;n de cada uno de los ejercicios en la siguiente <a href="https://drive.google.com/open?id=1M2Llttzbg_FAM7OpAit81kZCiaLKFyxO">carpeta</a></p><h2 id="12">Referencias</h2><div><ol><li>Lathi, B. (2005). <i>Linear Systems and Signals</i>. E.U.A.: Oxford University Press</li><li>Moore, H. (2009). <i>MATLAB for Engineers.</i> E.U.A.: Prentice Hall.</li><li>Ashok Ambardar. (1999). Analog and Digital Signal Processing. M&eacute;xico D. F., M&eacute;xico: BROOKS/COLE PUBLISHING COMPANY.</li><li>Hwei P. Hsu. (2013). Se&ntilde;ales y Sistemas. M&eacute;xico D. F., M&eacute;xico: McGrawHill.</li></ol></div><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%%
+%
+% <<portada.png>>
+%% Objetivos
+% * Conocer métodos básicos de integracíon numérica
+% * Manipulación de instrucciones en MATLAB
+% * Simular convoluciones y correlaciones de señales continuas
+% * Simular convoluciones y correlaciones de señales discretas
+%% Introducción
+%% Desarrollo
+% Se plantea la solución a cinco problemas, donde cada uno requiere del
+% uso de Matlab como herramienta de cálculo y análisis.
+%% Ejercicio 1
+% Para el PR04 reporte la grafica de la simulación númerica de la convolución
+% y compare con el resultado análitico que obtuvo para el problema 1, esto
+% es, su práctica tendrá que incluir una llamada a la funciónn convconm y posteriormente
+% se tendrá que mostrar (mediante el Publish) la gráfica tanto de las señales
+% involucradas como el resultado de la convolución, y en esta última gráficara
+% su resultado analitico, se tendrá que incluir el resultado analitico.
+%
+clc; clear; close all;
+u = @(t) heaviside(t);
+x = @(t) exp(-t).*(u(t)-u(t-1)); %En programa se implementa REPLACE_WITH_DASH_DASH> input('Ingresa la función x(t):  ');
+xl = [0 1];%En programa se implementa REPLACE_WITH_DASH_DASH> input('Ingresa los limites de la función x(t):  ');
+
+h= @(t) t.*(u(t+1)-u(t-1)); %En programa se implementa REPLACE_WITH_DASH_DASH> input('Ingresa la función h(t):  ');
+hl=[-1 1]; %En programa se implementa REPLACE_WITH_DASH_DASH> input('Ingresa los limites de la función h(t):  ');
+convconm(x,xl,h,hl,u)
+t1=-1:0.01:0; t2=0:0.01:1; t3=1:0.01:2; t4=-4:0.01:-1; t5=2:0.01:4;
+subplot(1,2,2); hold on
+plot(t1,t1-1+2*exp(-t1-1)); plot(t2,t2-1-(t2-2)/exp(1)); plot(t3,-(t3-2)/exp(1)); plot(t4,0); plot(t5,0);
+legend('y(t) numerico','t','t-1+2*e^(-t-1)','t-1-(t-2)/e','-(t-2)/e')
+%%
+% <<E1.jpg>>
+% 
+%% Ejercicio 2
+% Para el PR05 reporte la grafica de la simulación númerica de la correalción
+% y compare con el resultado análitico que obtuvo para el problema e), esto
+% es, su práctica tendrá que incluir una llamada a la funciónn convconm y posteriormente
+% se tendrá que mostrar (mediante el Publish) la gráfica tanto de las señales
+% involucradas como el resultado de su correlación, y en esta última graficara
+% su resultado analitico, se tendrá que incluir el resultado analitico.
+clc; clear; close all;
+u = @(t) heaviside(t);
+h = @(t) u(t)-2*u(t-3)+u(t-4); %En programa se implementa REPLACE_WITH_DASH_DASH> input('Ingresa la función x(t):  ');
+xl = [0 4];%En programa se implementa REPLACE_WITH_DASH_DASH> input('Ingresa los limites de la función x(t):  ');
+x = @(t) -u(t)+2*u(t+3)-u(t+4);
+convconm1(x,xl,h,u)
+t1=-6:0.01:-4; t2=-4:0.01:-3; t3=-3:0.01:-1; t4=-1:0.01:0; t5=0:0.01:1; t6=1:0.01:3; t7=3:0.01:4; t8=4:0.01:6;
+subplot(1,2,2); hold on
+plot(t1,0); plot(t2,-(4+t2)); plot(t3,t3+2); plot(t4,3*t4+4); plot(t5,4-3*t5); plot(t6,2-t6); plot(t7,t7-4); plot(t8,0);
+legend('y(t) numerico','t','0','-(4+t)','t+2','3t+4','4-3t','2-t','t-4','0')
+%%
+% 
+% <<E2.jpg>>
+% 
+%% Ejercicio 3
+% Realice la simuación de la convolución de las señales (c) con (d) del problema 3.1.1
+n=0:20;
+x1=[0 0 0 0 0 0 0 -9 -6 -3 0 3 6 9 0 0 0 0 0 0 0];
+x2=[0 0 0 0 0 0 0 0 4 2 0 2 4 0 0 0 0 0 0 0 0];
+convdisc([n;x1],[n;x2])
+%% Ejercicio 4
+% Realice la simuación de la correlación de las señales (c) con (d) del problema 3.1.1
+n=0:20;
+x2=[0 0 0 0 0 0 0 9 6 3 0 -3 -6 -9 0 0 0 0 0 0 0];
+x1=[0 0 0 0 0 0 0 0 4 2 0 2 4 0 0 0 0 0 0 0 0];
+cordisc([n;x1],[n;-x2])
+%% Ejercicio 5
+% Realice la la convolución de las señales (c) con (d) del problema 3.1.1 utilizando
+% el comando conv de MATLAB, muestre el código utilizado y gráfique el resultado,
+% sugerencia: Utilice las propiedades de traslación de la convolución.
+clc; clear all; close all
+
+subplot(3, 1, 1)
+n1 = [-6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6];
+x1 = [0 0 0 -9 -6 -3 0 3 6 9 0 0 0];
+stem(n1, x1, 'filled', 'red'); axis([-8 8 -10 10]);
+set(gca,'Color',[0.945098042488098 0.968627452850342 0.949019610881805], 'XGrid','on','YGrid','on')
+title('c): x1[n]');
+xlabel('n') 
+ylabel('x1[n]') 
+
+subplot(3, 1, 2)
+n2 = [-5 -4 -3 -2 -1 0 1 2 3 4 5];
+x2 = [0 0 0 4 2 0 2 4 0 0 0];
+stem(n2, x2, 'filled', 'green'); axis([-8 8 -2 7]);
+set(gca,'Color',[0.945098042488098 0.968627452850342 0.949019610881805],'XGrid','on','YGrid','on')
+title('d): x2[n]');
+xlabel('n') 
+ylabel('x2[n]') 
+
+subplot(3, 1, 3)
+g = conv (x1, x2);
+ng = -11:11;
+stem(ng, g, 'filled', 'magenta'); axis([-15 15 -50 50]);
+set(gca,'Color',[0.945098042488098 0.968627452850342 0.949019610881805],'XGrid','on','YGrid','on')
+title('Convolución g[n] = x1[n]*x2[n]');
+xlabel('n') 
+ylabel('g[n]') 
+%% Apendice A
+% Puede consultar los codigos de programación de cada uno de los ejercicios
+% en la siguiente <https://drive.google.com/open?id=1M2Llttzbg_FAM7OpAit81kZCiaLKFyxO carpeta>
+%% Referencias
+% # Lathi, B. (2005). _Linear Systems and Signals_. E.U.A.: Oxford University Press
+% # Moore, H. (2009). _MATLAB for Engineers._ E.U.A.: Prentice Hall.
+% # Ashok Ambardar. (1999). Analog and Digital Signal Processing. México D. F., México: BROOKS/COLE PUBLISHING COMPANY.
+% # Hwei P. Hsu. (2013). Señales y Sistemas. México D. F., México: McGrawHill.
+##### SOURCE END #####
+--></body></html>
